@@ -3,18 +3,18 @@ My linux workstation programas:
 
 Gimp\
 Inkscape\
-Krita\ 
+Krita\
 Unreal Engine\
 Unigine\
 Unity\
-Houdini\ 
-Blender\ 
+Houdini\
+Blender\
 Octane Render\
 Substance painter\
-davinci resolve\			
+davinci resolve\
 Android Studio\
-IntelliJ\	
-PyCharm\		
+IntelliJ\
+PyCharm\
 Flutter\
 MySQL\
 Sublime text\
