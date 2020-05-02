@@ -17,4 +17,4 @@ IntelliJ\
 PyCharm\
 Flutter\
 MySQL\
-Sublime text\
+Sublime text
