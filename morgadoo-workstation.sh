@@ -6,7 +6,7 @@ sudo apt install xorriso libssl1.0.0 ocl-icd-opencl-dev fakeroot
 
 sudo apt install snapd -y
 sudo snap install blender --classic -y
-sudo snap install android-studio -y
+sudo snap install android-studio --classic
 sudo snap install sublime-text -y
 sudo apt install krita -y
 sudo apt install inkscape -y
