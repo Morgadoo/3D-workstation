@@ -18,4 +18,5 @@ PyCharm\
 Flutter\
 MySQL\
 Sublime text\
-Pureref
+Pureref\
+Ulauncher
