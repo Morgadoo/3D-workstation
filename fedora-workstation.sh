@@ -123,7 +123,7 @@ gitg `#a gui for git, a little slow on larger repos sadly` \
 nano `#Because pressing i is too hard sometimes`
 
 
-echo "-------------------------Extra Apps-------------------------"
+echo "------------------------- Extra Apps -------------------------"
 
 ###
 # Extra
@@ -166,10 +166,16 @@ sudo tuned-adm profile desktop
 
 sudo dnf update -y && sudo dnf upgrade -y
 
+
+
+echo "------------------------- Theming Gnome -------------------------"
+
 ###
 # Theming and GNOME Options
 ###
 
+#Gnome Backgroud
+gsettings set  org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/gnome/adwaita-timed.xml'
 
 #Gnome Shell Theming
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
@@ -200,4 +206,5 @@ gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 sudo dnf -y autoremove
 
 #The user needs to reboot to apply all changes.
-echo "Please Reboot" && exit 0
+echo "-------------------------Please Reboot-------------------------"
+exit 0
