@@ -3,6 +3,7 @@
 ###
 # Update and Upgrade
 ###
+echo "---------------------- Update and Upgrade ----------------------"
 
 sudo dnf update -y && sudo dnf upgrade -y
 
@@ -18,6 +19,7 @@ sudo dnf clean all
 # This is holding only open source, vetted applications - fedora just cant legally distribute them themselves thanks to 
 # Software patents
 ###
+echo "---------------------- RpmFusion Free Repo ----------------------"
 
 sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 
@@ -25,6 +27,7 @@ sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-r
 # RpmFusion NonFree Repo
 # This includes Nvidia Drivers and more
 ###
+echo "---------------------- RpmFusion NonFree Repo ----------------------"
 
 sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
@@ -34,7 +37,6 @@ sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw
 printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg" |sudo tee -a /etc/yum.repos.d/vscodium.repo
 sudo dnf install -y codium
 
-echo "------------------------------------------------"
 
 ###
 # Force update the whole system to the latest and greatest
@@ -45,9 +47,12 @@ sudo dnf upgrade --best --allowerasing --refresh -y
 # And also remove any packages without a source backing them
 sudo dnf distro-sync -y
 
+
 ###
 # Install base packages and applications
 ###
+echo "---------------------- Install base Applications ----------------------"
+
 
 sudo dnf install \
 -y \
@@ -83,6 +88,8 @@ gimp-wavelet-denoise-plugin \
 git `#VCS done right` \
 gmic-gimp \
 gnome-shell-extension-user-theme `#Enables theming the gnome shell` \
+gnome-extensions-a* \
+gnome-tweak-tool \
 gnome-tweaks `#Your central place to make gnome like you want` \
 gtkhash-nautilus `#To get a file has via gui` \
 gvfs-fuse `#gnome<>fuse` \
@@ -121,10 +128,6 @@ echo "-------------------------Extra Apps-------------------------"
 ###
 # Extra
 ###
-
-sudo dnf install -y gnome-extensions-a*
-sudo dnf install -y gnome-tweak-tool
-
 
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
