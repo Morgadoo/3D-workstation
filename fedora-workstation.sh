@@ -111,7 +111,6 @@ p7zip `#Archives` \
 papirus-icon-theme `#A quite nice icon theme` \
 python3-devel `#Python Development Gear` \
 rawtherapee `#Professional RAW Editor` \
-spamassassin `#Dep to make sure it is locally installed for Evolution` \
 telegram-desktop `#Chatting, with newer openssl and qt base!` \
 transmission `#Torrent Client` \
 tuned `#Tuned can optimize your performance according to metrics. tuned-adm profile powersave can help you on laptops, alot` \
@@ -120,7 +119,17 @@ youtube-dl `#Allows you to download and save youtube videos but also to open the
 adobe-source-code-pro-fonts `#The most beautiful monospace font around` \
 borgbackup `#If you need backups, this is your tool for it` \
 gitg `#a gui for git, a little slow on larger repos sadly` \
-nano `#Because pressing i is too hard sometimes`
+nano `#Because pressing i is too hard sometimes` \
+fish
+
+
+
+echo "------------------------- Config Apps -------------------------"
+
+
+
+
+
 
 
 echo "------------------------- Extra Apps -------------------------"
@@ -206,5 +215,5 @@ gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 sudo dnf -y autoremove
 
 #The user needs to reboot to apply all changes.
-echo "-------------------------Please Reboot-------------------------"
+echo "##### Installation Finished - Please Reboot #####"
 exit 0
