@@ -120,14 +120,15 @@ adobe-source-code-pro-fonts `#The most beautiful monospace font around` \
 borgbackup `#If you need backups, this is your tool for it` \
 gitg `#a gui for git, a little slow on larger repos sadly` \
 nano `#Because pressing i is too hard sometimes` \
-fish
+fish \
+util-linux-user
 
 
 
 echo "------------------------- Config Apps -------------------------"
 
-
-
+# Set fish as the default shell
+chsh -s `which fish`
 
 
 
@@ -215,5 +216,8 @@ gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 sudo dnf -y autoremove
 
 #The user needs to reboot to apply all changes.
-echo "##### Installation Finished - Please Reboot #####"
+echo "---------------------- Installation Finished - Please Reboot ----------------------"
+
+echo "add shortcut to terminal: ctr + alt + t"
+
 exit 0
