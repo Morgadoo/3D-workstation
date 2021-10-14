@@ -1,9 +1,11 @@
 #!/bin/bash
 
+
+echo "---------------------- Start Installation ----------------------"
+
 ###
 # Update and Upgrade
 ###
-echo "---------------------- Update and Upgrade ----------------------"
 
 sudo dnf update -y && sudo dnf upgrade -y
 
@@ -46,6 +48,13 @@ sudo dnf upgrade --best --allowerasing --refresh -y
 
 # And also remove any packages without a source backing them
 sudo dnf distro-sync -y
+
+###
+# Update and Upgrade
+###
+echo "---------------------- Update and Upgrade ----------------------"
+
+sudo dnf update -y && sudo dnf upgrade -y
 
 
 ###
@@ -121,7 +130,8 @@ borgbackup `#If you need backups, this is your tool for it` \
 gitg `#a gui for git, a little slow on larger repos sadly` \
 nano `#Because pressing i is too hard sometimes` \
 fish \
-util-linux-user
+util-linux-user \
+folder-color
 
 
 
@@ -161,9 +171,10 @@ chromium `#Using Chromium resets chromium-vaapi so remove it if installed, userp
 # or set a more specific tuned profile
 ###
 
+echo "------------------------- User Config -------------------------"
 
 
-sudo tuned-adm profile desktop
+sudo tuned-adm profile throughput-performance
 
 #Virtual Machine Host:
 #sudo tuned-adm profile virtual-host
@@ -176,8 +187,10 @@ sudo tuned-adm profile desktop
 
 sudo dnf update -y && sudo dnf upgrade -y
 
-
-
+#dconf load / <./user.conf
+#dconf dump /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ >~/.config/dconf/user.conf
+#dconf load /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ <./user.conf
+#dconf load /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ <~/.config/dconf/user.conf
 echo "------------------------- Theming Gnome -------------------------"
 
 ###
@@ -218,6 +231,6 @@ sudo dnf -y autoremove
 #The user needs to reboot to apply all changes.
 echo "---------------------- Installation Finished - Please Reboot ----------------------"
 
-echo "add shortcut to terminal: ctr + alt + t"
+echo "add shortcut --> gnome-terminal : ctr + alt + t"
 
 exit 0
