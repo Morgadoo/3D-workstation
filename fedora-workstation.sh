@@ -33,7 +33,7 @@ sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-non
 
 
 # vscodium, an open source fork of vscode
-sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg -y
+sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
 printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg" |sudo tee -a /etc/yum.repos.d/vscodium.repo
 sudo dnf install -y codium
 
@@ -171,18 +171,17 @@ sudo dnf update -y && sudo dnf upgrade -y
 ###
 
 
-
 #Gnome Shell Theming
-gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
-gsettings set org.gnome.desktop.interface cursor-theme 'Breeze_Snow'
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+#gsettings set org.gnome.desktop.interface cursor-theme 'Breeze_Snow'
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
-gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark-solid'
+#gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark-solid'
 
 #Set SCP as Monospace (Code) Font
 gsettings set org.gnome.desktop.interface monospace-font-name 'Source Code Pro Semi-Bold 12'
 
 #Set Extensions for gnome
-gsettings set org.gnome.shell enabled-extensions "['user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com']"
+gsettings set org.gnome.shell enabled-extensions "['user-theme@gnome-shell-extensions.gcampax.github.com']"
 
 #Usability Improvements
 gsettings set org.gnome.desktop.peripherals.mouse accel-profile 'adaptive'
@@ -192,37 +191,11 @@ gsettings set org.gnome.desktop.wm.preferences resize-with-right-button true
 gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
 gsettings set org.gnome.shell.overrides workspaces-only-on-primary false
 
-#Dash to Dock Theme
-gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme false
-gsettings set org.gnome.shell.extensions.dash-to-dock custom-background-color false
-gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-customize-running-dots true
-gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-color '#729fcf'
-gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed true
-gsettings set org.gnome.shell.extensions.dash-to-dock extend-height true
-gsettings set org.gnome.shell.extensions.dash-to-dock force-straight-corner false
-gsettings set org.gnome.shell.extensions.dash-to-dock icon-size-fixed true
-gsettings set org.gnome.shell.extensions.dash-to-dock intellihide-mode 'ALL_WINDOWS'
-gsettings set org.gnome.shell.extensions.dash-to-dock isolate-workspaces true
-gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top true
-gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items false
-gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
-gsettings set org.gnome.shell.extensions.dash-to-dock running-indicator-style 'SEGMENTED'
-gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.70000000000000000
-gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
-gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
-
 
 #Nautilus (File Manager) Usability
 gsettings set org.gnome.nautilus.icon-view default-zoom-level 'standard'
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 
-
-#Gnome Night Light (Like flux/redshift)
-gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
-gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic false
-gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-to 9.0
-gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 18.0
 
 sudo dnf -y autoremove
 
