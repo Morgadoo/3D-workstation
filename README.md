@@ -16,7 +16,6 @@ Android Studio\
 IntelliJ\
 PyCharm\
 Flutter\
-MySQL\
 Sublime text\
 Pureref\
 Ulauncher
