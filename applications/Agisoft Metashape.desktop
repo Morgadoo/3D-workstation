@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.7
+Type=Application
+Name=Agisoft Metashape
+Comment=Render
+Icon=/home/$USER/.icons/metashape_icon.jpg
+Exec=/home/$USER/metashape-pro/metashape
+Terminal=true
+Categories=Graphics;

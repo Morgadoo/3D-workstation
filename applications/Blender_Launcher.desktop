@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Blender Launcher
+Comment=Animation
+Icon=/home/$USER/.icons/Blender_Launcher.svg
+Exec=/home/$USER/Documentos/Blender_Laucher/Blender_Launcher
+Actions=
+Categories=Graphics;

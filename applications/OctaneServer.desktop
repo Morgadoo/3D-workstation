@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Octane Server
+Comment=Render
+Icon=/usr/local/OctaneBlender/octane_icon.png
+Exec=sudo /usr/local/OctaneServer/OctaneServer
+Terminal=true
+Categories=Graphics;
