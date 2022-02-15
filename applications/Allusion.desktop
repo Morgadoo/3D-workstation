@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Allusion
+Comment=Animation
+Icon=/home/$USER/.icons/allusion_icon.svg
+Exec=/home/$USER/Allusion/Allusion.AppImage
+Actions=
+Categories=Graphics;
