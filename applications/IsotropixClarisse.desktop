@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Isotropix Clarisse
+Comment=Render
+Icon=/home/$USER/.icons/clarisse_icon.png
+Exec=/home/$USER/clarisse/clarisse
+Categories=Graphics;

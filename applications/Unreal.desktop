@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Unreal 4.27
+Comment=Game Development
+Icon=/home/$USER/.icons/unreal_icon.png
+Exec=/home/$USER/UnrealEngine4.27.2/UnrealEngine/Engine/Binaries/Linux/UE4Editor
+Categories=Graphics;

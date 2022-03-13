@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Start Houdini
+Comment=3D Animation Tools
+Exec=/home/$USER/.houdini_start.sh %F
+Icon=/opt/hfs19.0/houdini_logo.png
+Type=Application
+Terminal=true
+Encoding=UTF-8
+Categories=Houdini 19.0;
