@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Houdini Server
+Comment=3D Animation Tools
+Exec=/home/$USER/.scripts/houdini_server.sh
+Icon=/home/$USER/.icons/houdini_logo.png
+Type=Application
+Terminal=true
+Encoding=UTF-8
+Categories=Houdini 19.0;

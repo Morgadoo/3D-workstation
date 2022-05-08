@@ -33,18 +33,17 @@ echo "---------------------- RpmFusion NonFree Repo ----------------------"
 
 sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-
 # vscodium, an open source fork of vscode
-sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
-printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg" |sudo tee -a /etc/yum.repos.d/vscodium.repo
-sudo dnf install -y codium
+# sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
+# printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg" |sudo tee -a /etc/yum.repos.d/vscodium.repo
+# sudo dnf install -y codium
 
 
 ###
 # Force update the whole system to the latest and greatest
 ###
 
-sudo dnf upgrade --best --allowerasing --refresh -y
+# sudo dnf upgrade --best --allowerasing --refresh -y
 
 # And also remove any packages without a source backing them
 sudo dnf distro-sync -y
@@ -58,6 +57,17 @@ sudo dnf update -y && sudo dnf upgrade -y
 
 
 ###
+# Install nvidia drivers
+###
+echo "---------------------- Install nvidia drivers ----------------------"
+
+
+sudo dnf install -y akmod-nvidia
+sudo dnf install -y xorg-x11-drv-nvidia-cuda
+nvidia-smi
+
+
+###
 # Install base packages and applications
 ###
 echo "---------------------- Install base Applications ----------------------"
@@ -68,7 +78,7 @@ sudo dnf install \
 blender `#3D Software Powerhouse` \
 calibre `#Ebook management` \
 chromium-freeworld `#Comes with hardware acceleration and all Codecs` \
-codium `#A nice editor`\
+# codium `#A nice editor`\
 darktable `#Easy RAW Editor` \
 exfat-utils `#Allows managing exfat (android sd cards and co)` \
 ffmpeg `#Adds Codec Support to Firefox, and in general` \
@@ -130,8 +140,8 @@ borgbackup `#If you need backups, this is your tool for it` \
 gitg `#a gui for git, a little slow on larger repos sadly` \
 nano `#Because pressing i is too hard sometimes` \
 fish \
-util-linux-user \
-folder-color
+util-linux-user
+# folder-color
 
 
 
@@ -149,9 +159,9 @@ echo "------------------------- Extra Apps -------------------------"
 # Extra
 ###
 
-sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
-sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
-sudo dnf install -y sublime-text
+# sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+# sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+# sudo dnf install -y sublime-text
 
 
 
